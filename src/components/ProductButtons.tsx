@@ -9,7 +9,6 @@ export interface Props{
 }
 
 export const ProductButtons = ({className, style}:Props) =>{
-    ///TODO: Extraer maxCount
     const {counter, increase, maxCount} = useContext(ProductContext)
     const isMaxReached = useCallback(
       () => {
@@ -17,10 +16,6 @@ export const ProductButtons = ({className, style}:Props) =>{
       },
       [counter, maxCount],
     )
-    
-
-    ///TODO: isMaxReached = useCallback, dependencias [count, maxCount]
-    ///True si el count === maxCount, false si no lo es
   
   return(
     <div className={`${styles.buttonsContainer} ${className}`} style={style}>
