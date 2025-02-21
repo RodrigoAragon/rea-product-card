@@ -14,6 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -22,9 +23,19 @@
   "peerDependencies": {
     "react": ">=16"
   },
+  "repository": {
+    "url": "https://github.com/RodrigoAragon/rea-product-card",
+    "type": "git"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     }
   },
   "prettier": {
@@ -47,17 +58,28 @@
     }
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@rollup/plugin-image": "^3.0.3",
     "@size-limit/preset-small-lib": "^11.2.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "babel-jest": "^29.7.0",
     "husky": "^9.1.7",
+    "jest": "^29.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-test-renderer": "^19.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^11.2.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.8.1",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@types/react-test-renderer": "^19.0.0",
+    "identity-obj-proxy": "^3.0.0"
   }
 }
